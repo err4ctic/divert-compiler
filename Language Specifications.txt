@@ -1,0 +1,191 @@
+# Mini Language Specification v0.1
+
+This language is a small, statically typed programming language designed around simple variables, arithmetic, printing, and numeric `for` loops.
+
+## Data Types
+
+The language supports four data types:
+
+* `int` — whole numbers
+* `float` — decimal numbers
+* `string` — text
+* `bool` — Boolean values
+
+Boolean values are written as:
+
+* `true`
+* `false`
+
+## Variables
+
+Variables must declare their datatype when they are created.
+
+The general structure is:
+
+`datatype variableName = value;`
+
+Variables are mutable, meaning their values can be changed after they have been declared.
+
+The language is case-sensitive, so differently capitalized names are treated as different names.
+
+## Arithmetic Operators
+
+The language supports:
+
+* `+` addition
+* `-` subtraction
+* `*` multiplication
+* `/` division
+* `%` modulo/remainder
+* `**` exponentiation
+
+### Numeric Type Rules
+
+Arithmetic between two integers normally produces an integer.
+
+Arithmetic involving an integer and a float produces a float.
+
+Arithmetic between two floats produces a float.
+
+For division:
+
+* `int / int` produces an `int`
+* `int / float` produces a `float`
+* `float / int` produces a `float`
+* `float / float` produces a `float`
+
+## Operator Precedence
+
+From highest priority to lowest:
+
+1. `**`
+2. `*`, `/`, `%`
+3. `+`, `-`
+4. comparison operators
+
+Exponentiation is right-associative.
+
+Therefore, an expression such as:
+
+`2 ** 2 ** 3`
+
+is interpreted as:
+
+`2 ** (2 ** 3)`
+
+rather than:
+
+`(2 ** 2) ** 3`
+
+## Comparison Operators
+
+The language supports:
+
+* `>` greater than
+* `<` less than
+* `==` equal to
+* `>=` greater than or equal to
+* `<=` less than or equal to
+* `!=` not equal to
+
+Comparison expressions produce a `bool`.
+
+`=` is used for assigning values, while `==` is used for checking equality.
+
+## Printing
+
+The language contains a print operation.
+
+It can print values of all four supported datatypes:
+
+* `int`
+* `float`
+* `string`
+* `bool`
+
+## Statements
+
+Normal statements end with a semicolon.
+
+Blocks of statements are surrounded by curly brackets:
+
+`{ ... }`
+
+## Scope
+
+The language uses block scope.
+
+A variable declared inside a block belongs to that block and cannot be accessed outside of it.
+
+Nested blocks may contain their own variables.
+
+## For Loops
+
+The language supports numeric `for` loops.
+
+The general structure is:
+
+`for (int variable in range(...)) { ... }`
+
+The loop variable is an integer and belongs to the loop's block scope.
+
+### Range
+
+There are two range forms.
+
+`range(end)`
+
+This:
+
+* starts at `0`
+* uses a step size of `1`
+* stops before `end`
+
+For example, a range ending at `10` represents:
+
+`0, 1, 2, 3, 4, 5, 6, 7, 8, 9`
+
+The second form is:
+
+`range(end, step)`
+
+This:
+
+* starts at `0`
+* uses the supplied step size
+* stops before `end`
+
+For example, a range ending at `10` with a step of `2` represents:
+
+`0, 2, 4, 6, 8`
+
+The ending value is always exclusive.
+
+For version 0.1, range steps are positive integers. Backwards iteration and custom starting values are not currently supported.
+
+## Strings
+
+Strings contain basic text.
+
+Version 0.1 does not support escape sequences or special escaped characters inside strings.
+
+Advanced string functionality can be added in a later version.
+
+## Overall Philosophy
+
+Version 0.1 intentionally keeps the language small.
+
+It currently supports:
+
+* typed variables
+* mutable variables
+* integer and floating-point arithmetic
+* strings
+* booleans
+* comparisons
+* printing
+* numeric ranges
+* `for` loops
+* block scope
+
+Features such as functions, arrays, user-defined types, `if` statements, `while` loops, advanced strings, and more complex iterables are outside the scope of version 0.1.
