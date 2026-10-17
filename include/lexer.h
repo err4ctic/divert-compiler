@@ -83,6 +83,8 @@ private:
 
   void ReadWord(const std::string& source);
 
+  void ReadOperator(const std::string& source);
+
 public:
   // Constructor.
   Lexer();

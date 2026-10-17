@@ -24,8 +24,6 @@ The general structure is:
 
 `datatype variableName = value;`
 
-Variables are mutable, meaning their values can be changed after they have been declared.
-
 The language is case-sensitive, so differently capitalized names are treated as different names.
 
 ## Arithmetic Operators
@@ -171,14 +169,9 @@ Version 0.1 does not support escape sequences or special escaped characters insi
 
 Advanced string functionality can be added in a later version.
 
-## Overall Philosophy
-
-Version 0.1 intentionally keeps the language small.
-
 It currently supports:
 
 * typed variables
-* mutable variables
 * integer and floating-point arithmetic
 * strings
 * booleans
